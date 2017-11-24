@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>End</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="end.css">
+</head>
+<body>
+<div>
+	Hello<span>We love </span><strong>jQuery</strong> now
+</div>
+<script>
+	$(document).ready(function()
+		{
+			$("div").find("span").css("color" , "red").end()
+			.find("strong").css("color" , "blue").end()
+			.css("fontWeight" , "bold");
+			
+		});
+		</script>
+</body>
+</html>

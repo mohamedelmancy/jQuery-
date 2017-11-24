@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Traversing Lect4</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="traversingLect4.css">
+</head>
+<body>
+<section>
+	<div>This is div 0 ,-0 </div>
+	<div class="second">This is div 1 , -7</div>
+	<div>This is div 2 , -6</div>
+	<div>This is div 3 , -5</div>
+	<div>This is div 4 , -4</div>
+	<div>This is div 5 , -3</div>
+	<div>This is div 6 , -2</div>
+	<div>This is div 7 , -1</div>
+</section>
+<script>
+	$(document).ready(function()
+		{
+			$("div").first().css("background","red");
+			$(".second").first().next().css("background","green");
+			$("div").last().css("border","5px solid blue");
+			$("div").last().prev().css("border","5px solid yellow");
+				$("div").last().prevAll().css("fontSize","30px");
+				$("div").eq(5).css("color","black");
+				$("div").eq(-4).css("color","gray");
+				$("div").eq(-0).css("color","gray");// first
+				$("div").eq(-1).css("color","gray");// last
+				$("div").eq(-7).css("color","gray");
+				////////////////////////////////////
+				////////////////////////////////////// filter
+				//////////////////////////////////////
+				$("div").filter(".second").css("background","brown");
+				$("div").filter(function(mancy)
+					{
+					        return mancy===3;
+					}).css("background","gold");
+                ////////////////////////////////////
+				////////////////////////////////////// Not
+				//////////////////////////////////////
+
+
+				$("div").not(function(mancy)
+					{
+					        return mancy===3;
+					}).css("background","#676767");
+		});
+</script>
+
+</body>
+</html>

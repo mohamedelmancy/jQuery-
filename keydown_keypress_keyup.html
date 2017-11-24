@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>keydown_keypress_keyup.html</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="keydown_keypress_keyup.css">
+</head>
+<body>
+<input type="text" placeholder="ad title">
+<textarea placeholder="ad content"></textarea>
+<div>
+	<h3></h3>
+	<p></p>
+</div>
+<script>
+	$(document).ready(function()
+		{
+			/*$("input").on("keydown" , function()
+				{
+					$("div").text("You are going to click the keyboard");
+				});
+
+			$("input").on("keypress" , function()
+				{
+					$("div").text("You  made keypress");
+				});
+*/
+			$("input").on("keyup" ,  function()
+				{
+					$("div h3").text($(this).val());
+				});
+
+
+			$("textarea").on("keyup" ,  function()
+				{
+					$("div p").text($(this).val());
+				});
+		});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Silde</title>
+<script src="jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="slide.css">
+</head>
+<body>
+<div class="open">Click her to slide</div>
+<div class="box">Box</div>
+<div class="another">Another</div>
+<script>
+	$(document).ready(function()
+		{
+			$(".open").click(function()
+				{
+					$(".box").slideDown(3000,function()
+						{
+							$(".open").hide("slow",function()
+								{
+									$(".another").slideUp("slow",function()
+										{
+													$(".open").slideToggle("slow");
+										});
+								});
+						});
+				});
+			
+		});
+</script>
+</body>
+</html>

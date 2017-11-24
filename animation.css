@@ -1,0 +1,33 @@
+.div1
+{
+	width: 300px;
+	background:#eee;
+	padding: 10px;
+	border: 2px solid #ccc;
+	position: relative;
+
+}
+span
+{
+	color: red;
+	font-weight: bold;
+	display: none;
+}
+.div2
+{
+	width: 300px;
+	background:#eee;
+	padding: 10px;
+	border: 2px solid #ccc;
+	position: relative;
+
+}
+.div3
+{
+	width: 300px;
+	background:#eee;
+	padding: 10px;
+	border: 2px solid #ccc;
+	position: absolute;
+top: -300px;
+}

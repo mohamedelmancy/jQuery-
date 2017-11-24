@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CssClasses</title>
+				<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="cssclasses.css">
+</head>
+<body>
+<button>Add Class</button>
+<p>This is Paragraph</p>
+<p>This is  another Paragraph</p>
+<p>This is New  Paragraph</p>
+<div class="mancy jquery course">This is normal div </div>
+<div class="mancy jquery course">This is normal div </div>
+<span>This is span</span><br/>
+<span>This is span</span>
+<script>
+	$(document).ready(function()
+		{
+			$("button").click(function()
+				{
+					$("div:first,p:contains('New'),p:eq(0),span:last").addClass("custom br").removeClass("mancy jquery course");
+					$("div").toggleClass("custom");
+				});
+		});
+</script>
+
+</body>
+</html>

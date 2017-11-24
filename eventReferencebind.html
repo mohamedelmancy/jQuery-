@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EventReferencebind.html</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="eventReferencebind.css">
+</head>
+<body>
+<div class="normal">This is div</div>
+<div class="map">This is event map</div>
+<div class="custom">This is custom</div>
+<button>Trigger Custom Event</button>
+<script>
+	$(document).ready(function()
+		{
+			$(".normal").bind("click",function()
+				{
+					$(this).slideUp("slow");
+				});
+			///////////////////////////////////
+			//////////////////////////////////
+			$(".normal").bind("mouseenter mouseleave",function()
+				{
+					$(this).toggleClass("color");
+				});
+			//////////////////////////////////
+			///////////////////////////////// EVENT MAP
+			$(".map").bind({
+				click: function(){
+					$(this).text(" you have clicked me")
+					$(this).css("color" , "red");
+				},
+				dblclick:function(){
+					 $(this).text(" you have double clicked me")
+					$(this).css("color" , "blue");
+				},
+				mouseenter:function(){
+					 $(this).text(" you have mouseenter  me")
+					$(this).css("color" , "gold");
+				},
+				mouseleave:function(){
+					 $(this).text(" you have mouseleaved  me")
+					$(this).css("color" , "gray");
+				}
+
+			});
+			$(".custom").bind("myCustomEvent" , function(event, myname, myage)
+				{
+					
+					$(this).text("Hello " + myname +" " +"Your age is  " +myage);
+				});
+			$("button").click(function()
+				{
+						$(".custom").trigger("myCustomEvent" , ["mancy" , "23"]); //trigger >>> y3ny sh3'l el function de (myCustomEvent)
+				});
+			
+		});
+</script>
+
+</body>
+</html>

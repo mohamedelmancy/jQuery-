@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Referenceselectors</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="referenceselectors.css">
+</head>
+<body>
+<section class="section1">
+<h2>Part 1</h2>
+    <div>This is div 0 </div>
+	<div>This is div 1 </div>
+	<div class="d">This is div 2 </div>
+	<div>This is div 3 </div>
+	<div>This is div 4 </div>
+	<P class="p">This paragraph 1</P>
+	<P>This paragraph 2</P>
+	<P>This paragraph 3</P>
+	<P>This paragraph 4</P>
+	<aside class="as">This is aside 1</aside>
+	<aside>This is aside 2</aside>
+	<aside>This is aside 3</aside>
+	<aside>This is aside 4</aside>
+</section>
+<section class="section2">
+<h2>part 2</h2>
+<P>This paragraph 1 in the section</P>
+<div>This is the first div in the section</div>
+   <div>
+	<P>This paragraph 1 in the div</P>
+	<P>This paragraph 2 in the div</P>
+	<P>This paragraph 3 in the div</P>
+	<P>This paragraph 4 in the div</P>
+	</div>
+	<aside>This is aside 1</aside>
+	<aside>This is aside 2</aside>
+	<aside>This is aside 3</aside>
+	<aside>This is aside 4</aside>
+	<P>This paragraph 1 in the section</P>
+
+</section>
+<script>
+	$(document).ready(function()
+	{
+		$("body .section1 *").css("fontWeight" , "bold");
+		$(".section1 .p , .section1 .d , .section1 .as").css("color" , "blue");
+		$(" .section1 div , .section1 p , .section1 aside ").css("fontFamily" , "tahoma" );
+		$(" .section1 div:first , .section1 p:last , .section1 aside:last").css("background" , "green");
+		$(".section1 div:odd , .section1  p:odd , .section1  aside:even").css("color" , "gold");
+
+		/////////////////////////////////////////////////// part 2/////////////////////////////////////
+		//////////////////////////////////////////////////        ////////////////////////////////////// 
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		$(".section2 p:first").css("border" , "3px solid red");//only the first child P who has parent
+		$(".section2 p:first-child").css("border" , "3px solid blue");//all the first child  P who has parent
+		$(".section2 p:last").css("border" , "3px solid purple");//only the first child who has parent
+		$(".section2 p:last-child").css("color" , "pink");
+		$(".section2 p:first-of-type").css("color" , "purple");
+		$(".section2 p:last-of-type").css("color" , "gold");
+		$(".section2 p:nth-child(2)").css("fontWeight" , "bold");
+		$(".section2 p:nth-child(2)").next().css("background" , "green");//  2 must be paragraph
+		$(".section2 p:nth-of-type(2)").css("border" , "6px solid red");// search to find the second p
+
+
+
+	});
+</script>
+
+</body>
+</html>

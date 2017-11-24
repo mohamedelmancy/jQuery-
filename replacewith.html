@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Replace With</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="replacewith.css">
+</head>
+<body>
+<div>Mohamed Elmancy</div>
+<button>Save</button>
+<script>
+	$(document).ready(function()
+		{
+		$("div").click(function()
+			{
+				$(this).replaceWith("<input type='text' value='"+$(this).text()+"' >");
+				$("button").fadeIn().css("display" , "inline");
+			});
+		
+		$("button").click(function()
+			{
+				$("input").replaceWith("<div>"+ $('input').val()+"</div>");
+
+                 $("button").fadeOut();
+			});
+		});
+</script>
+</body>
+</html>

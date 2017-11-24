@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fade</title>
+		<script src="jquery.js"></script>
+		<link rel="stylesheet" type="text/css" href="fadestyle.css">
+</head>
+<body>
+<button id="b1">Fade In</button>
+<button id="b2">Fade Out</button>
+<button id="b3">Fade Toggle</button>
+<button id="b4">Fade To</button>
+
+<div>This is div</div>
+<span>The div is now 100% opacity</span>
+<script>
+	$(document).ready(function()
+		{
+			$("#b1").click(function()
+				{
+					$("div").fadeIn(3000,function()
+				{
+					$("span").fadeIn(3000);
+				});
+				});
+			$("#b2").click(function()
+				{
+					$("div").fadeOut(3000,function()
+				{
+					$("span").fadeOut(3000);
+				});
+				});
+			$("#b3").click(function()
+				{
+					$("div").fadeToggle(3000,function()
+				{
+					$("span").fadeToggle(3000);
+				});
+				});
+			$("#b4").click(function()
+				{
+					$("div").fadeTo(3000,.5,function()
+				{
+					$("span").fadeTo(3000,.5);
+				});
+				});
+
+		});
+</script>
+</body>
+</html>

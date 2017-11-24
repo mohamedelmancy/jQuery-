@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AddElements</title>
+				<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="addelements.css">
+</head>
+<body>
+<div>This is div</div>
+<input type="file"><span class="add">+</span>
+<script>
+	$(document).ready(function(){
+			$("div").append("  Hello In jquery");// at the end of div
+		$("div").append("<p>Hello From The Other Side</p>");// at the end of div
+		$("div").prepend("<a href=#>Google</a>");// at the first of div
+		$("div").before("<a href=#>Mancy before div </a>");
+			$("div").after("<a href=#>Mancy after div </a>");
+			$("span.add").click(function()
+				{
+					$("input").after("<br/><input type='file'>");
+				});
+			$("<p>manciano appendTo for jquery</p>").appendTo("div");
+			$("<p>manciano for  prependTo jquery</p>").prependTo("div");
+	});
+</script>
+</body>
+</html>

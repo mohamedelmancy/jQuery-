@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CssSetAndGet</title>
+				<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="cssgetandset.css">
+</head>
+<body>
+<button class="button1">Get Css</button>
+<button class="button2">Set Css</button>
+<p>This is Paragraph</p>
+<input type="text" name="c" value="">
+<script>
+	$(document).ready(function()
+		{
+			$(".button1").click(function()
+				{
+					var color = $("p").css("color");
+					$("input").val(color);
+				});
+
+			$(".button2").click(function()
+				{
+					var color = $("input").val();
+					$("p").css({
+						"background":"black",
+						"color":color,
+						"width":"400px"
+					});
+				});
+		});
+</script>
+
+</body>
+</html>

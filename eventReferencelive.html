@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EventReferencelive</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="eventReferencelive.css">
+</head>
+<body>
+<p>This is p</p>
+<div class="normal">This is div </div>
+<div class="input_file"> 
+<input type="file"> <span>+</span></div>
+<script>
+	
+$(document).ready(function()
+	{
+
+		$(".normal").on("click ",function()
+			{
+				$("<p> This is created paragarph</p>").insertAfter($(this));
+			});
+		$("p").on("click",function(){
+			$(this).slideUp("slow");
+		});
+		$(".input_file span").click(function()
+			{
+				$("<input type='file'> <span>+</span><br>").insertAfter($(this));
+			});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Is </title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="is.css">
+</head>
+<body>
+<div>I love jQuery <span>Click to see </span></div>
+<script>
+	$(document).ready(function()
+		{
+			$("span").click(function()
+				{
+					if ($(this).is("span , p , div ")) {
+						alert("Yes this is span or p or div ");
+					}
+				});
+
+		});
+</script>
+
+</body>
+</html>

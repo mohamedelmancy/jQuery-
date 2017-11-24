@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RemoveElements</title>	
+			<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="removeElements.css">
+</head>
+<body>
+<button class="button1">Click To Remove </button>
+<button class="button2">Click To Empty </button>
+<button class="button3">Click To Remove by Search in P </button>
+<p>This is mohamed paragraph</p>
+<p>This is mancy paragraph</p>
+
+
+<div class="div1">This is div1 <span>This is span</span></div>
+<div class="div2">This is div2</div>
+<script>
+	$(document).ready(function()
+		{
+
+			$(".button1").click(function()
+				{
+					$("div").fadeOut(2000,function()// remove bs el element is still in the page (it's opacity = 0)
+					{
+						$(this).fadeIn(2000,function()
+							{
+							$(this).slideUp(2000,function()
+							{
+								$(this).slideDown(2000,function()
+									{
+												$(this).remove();
+										   
+								   });
+							  });	
+
+						 });
+					 });
+				});
+
+			$(".button2").click(function()
+				{
+					$("div").empty();
+				});
+			
+
+			$(".button3").click(function()
+				{
+					$("p").remove(":contains(mohamed)");
+				});
+
+			
+		});
+</script>
+
+</body>
+</html>

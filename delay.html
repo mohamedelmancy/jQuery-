@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delay</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="delay.css">
+</head>
+<body>
+<button>Show message</button>
+<span></span>
+<script>
+	$(document).ready(function()
+		{
+			$("button").click(function()
+				{
+					$("span").text("Hello message").fadeIn(1000).delay(3000).fadeOut(1000);
+				});
+		});
+</script>
+</body>
+</html>

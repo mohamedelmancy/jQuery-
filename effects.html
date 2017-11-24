@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Effects</title>
+	<script src="jquery.js"></script>
+</head>
+<body> 
+<button>Click Me</button>
+<p>Welcome to effects</p>
+<span style="display: none;">This is span</span>
+<script>
+	$(document).ready(function()
+	{
+$("button").click(function()
+{
+	$("p").hide("fast",function()//callback function bttnfz b3d el hide 
+		{
+			$("span").show("slow");
+			$("span").css("color","red");
+		});
+})
+	$("button").dblclick(function()
+{
+	$("p").hide(3000,alert("you hide the paragraph Now by double click"));
+})
+	});
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

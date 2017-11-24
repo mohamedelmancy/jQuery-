@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Referenceselectorspart3</title>
+			<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="referenceselectorspart3.css">
+</head>
+<body>
+
+		<p>This is p child of body paragraph</p>
+
+		<div>
+		    <p>This is direct child</p>
+			<p>this is p child of div</p>
+			<p>this is p child of div</p>
+			<p>this is p child of div</p>
+
+			<aside>
+				<p>This no direct child</p>
+			</aside>
+
+		</div>
+<p>This is div</p>
+		<section>
+			<p>This is p child of section</p>
+			
+		</section>
+<script>
+	$(document).ready(function(){
+ 	$("p:only-child").css("color" , "red");// mfesh ay child 3'ero >>> hwa bs 
+ 	 	$("p:only-of-type").css("border" , "3px solid blue");// mfesh ay child mn no3o 
+ 	 	$("div > p").css("fontSize" , "30px");
+ 	 	$("p + aside").css("background" , "gray");//aside elly 2blo p
+ 	 	$("div ~ p ").css("background" ,"red");//siblings ( e5wato ) mn nfs el parent
+ 	 	$("div p:gt(1)").css("background" , "gold");// greater than 
+ 	 		$("div p:lt(1)").css("background" , "green");// less than 
+
+	});
+</script>
+</body>
+</html>

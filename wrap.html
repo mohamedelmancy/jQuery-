@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>wrap</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="wrap.css">
+</head>
+<body>
+<span>Mohamed</span>
+<span>Ahmed</span>
+<span>Hassan</span>
+<button class="add">Add Parent</button>
+<button class="remove">Remove Parent</button>
+<script>
+	$(document).ready(function()
+		{
+			$(".add").click(function()
+				{
+					$("span").wrap("<div></div");
+				});
+			$(".remove").click(function()
+				{
+					$("span").unwrap();
+				});
+		});
+</script>
+
+</body>
+</html>

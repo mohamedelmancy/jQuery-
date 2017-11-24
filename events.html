@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events</title>
+
+	<script src="jquery.js"></script>
+</head>
+<body>
+<button>Click</button>
+<p>Welcome For Ayes</p>
+<div>Div for hover</div>
+
+<script>
+	$(document).ready(function()
+	{
+$("button").click(function()
+{
+	$("p").css("color","red");
+	$(this).css("background","green");
+})
+$("button").dblclick(function()
+{
+	$(this).css("background","red");
+	$("p").css("color","blue");
+})
+$("button").mouseenter(function()
+{
+	$(this).css("width","80px");
+	$("p").css("font-weight","bold");
+})
+$("button").mouseleave(function()
+{
+	$(this).css("height","80px");
+	$("p").css("font-size","30px");
+})
+$("div").hover(
+	function()
+{
+		$(this).css("color","red")
+
+}
+,
+function()
+{
+	$(this).css("color","blue")
+}
+);
+	});
+</script>
+</body>
+</html>

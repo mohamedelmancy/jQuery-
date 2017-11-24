@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Has</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="has.css">
+</head>
+<body>
+<div>
+	<span>This is span inside div </span>
+</div>
+<p>
+	<span>This is span inside P </span>
+	<a href="link" class="test"></a>
+</p>
+<h2>
+	<span>This is span inside header </span>
+</h2>
+
+<script>
+	$(document).ready(function()
+		{
+			$("p").has("span").css("background" , "red");
+			$("p").has("span , b , strong").css("background" , "red");
+			$("p").has(".test").css("color" , "green");
+			$("p , h2 , div").has("span").css("background" , "blue");
+		});
+</script>
+
+</body>
+</html>

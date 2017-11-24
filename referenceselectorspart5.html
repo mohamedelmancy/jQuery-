@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>referenceselectorspart5</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="referenceselectorspart5.css">
+</head>
+<body>
+<img src="im.jpg" alt="image1 from mancy" title="myimage">
+<img src="im.jpg" alt="image2 frommancy" title="image">
+<img src="im.jpg" alt="image3 to mancy">
+<p lang="ar">This is arabic paragraph</p>
+<p lang="en">This is English paragraph</p>
+<p lang="fr">This is English paragraph</p>
+<div lang="en">This is English div</div>
+<div lang="ar">This is arabic div</div>
+<button>Click to make slide to all</button>
+<script>
+	$(document).ready(function()
+		{
+          $("img").css("borderRadius" , "50%");
+          $("[src]").css("boxShadow" , "-10px -10px 50px red");
+           $("[title]").css("border" , "3px solid gray");
+
+             $("[alt='image2 from mancy']").animate({
+             	width:"200px"
+             },"fast" ,function()
+             {
+             	$(this).animate({
+             		width:"400px"
+             	});
+             });
+
+             $("p[lang]").css("color" , "red");
+               $("div[lang]").css("color" , "blue");
+                $("div[lang='ar']").css("color" , "gray");
+                 $("p[lang='ar']").css("color" , "gold");
+                 $("p[lang!='fr']").css("color" , "purple");
+                 $("button").click(function()
+                 	{
+                 		$("[alt] , [lang]").slideUp("slow",function()
+                 {
+                 	$(this).slideDown("slow");
+                 });
+                 	});
+                 
+                $("img[alt*='to']").css("border" , "3px solid red");// * is contains 
+                $("img[alt~='from']").css("border" , "3px solid blue");// ~ is contains bs shrt tkon klma lw7dha msh laz2a f ay 7rof tany
+                 $("img[title^='my']").css("boxShadow" , "-10px -10px 50px gray");// * is start with  
+		});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Offset</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="offset.css">
+</head>
+<body>
+<div>This is main div</div>
+<script>
+	$(document).ready(function()
+		{
+			$("div").offset({
+				left:200,
+				top:200
+			});
+			console.log($("div").offset());
+			console.log($("div").offset().left);
+			console.log($("div").offset().top);
+			$(window).scroll(function()
+				{
+					console.log("scrollTop = "+$(this).scrollTop());
+					console.log(    "div offset is = " + $("div").offset().top  );
+
+					if ($(this).scrollTop() >=  $("div").offset().top ) {
+				$("div").css("background" , "green");
+			}
+				});
+
+		});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scroll</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="scroll.css">
+</head>
+<body>
+<div>Up</div>
+<script>
+	$(document).ready(function()
+		{
+
+			$(window).on("scroll" , function()
+				{
+					var sc=$(window).scrollTop();
+					console.log(sc);
+					if (sc>100) {
+						$("div").fadeIn("slow");
+					}
+					else
+					{
+						$("div").hide();
+					}
+				});
+		});
+</script>
+</body>
+</html>

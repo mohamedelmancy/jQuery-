@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Treaversing</title>
+						<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="traversing.css">
+</head>
+<body>
+<section class="main">
+This is section
+			<div class="top">
+			This is div
+			<p class="para">This is Paragraph<span>This is child</span></p>
+			<p class="para">This is Paragraph mine<span>This is child</span></p>
+		   </div>
+		   <aside>This is aside</aside>
+</section>
+<script>
+	$(document).ready(function()
+		{
+		$("span").parent().css("border","1px solid #00f");
+				$("p").parent().css("border","1px solid #f00");
+					$("div").parent().css("border","1px solid #080");
+						$("section").parents().css("background","#333");
+						$("div").parents(".main").css("border","3px solid #080");
+						$("span").parentsUntil(".top").css("border","3px solid red");
+							$("section").children().css("border"," 3px solid yellow");
+							console.log($("section").children());
+							console.log($("div").children());
+								$("section").children(".para").css("border"," 3px solid green");// will do nothing as para >>P is not his children
+								$("section").find(".para").css("color","gray");
+								$("section").find("*").css("fontWeight","bold");
+								$("section").find($("p:contains('mine')")).css("fontFamily","tahoma");
+
+		});
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EventReferencelive</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="eventReferenceliveanddelegate.css">
+</head>
+<body>
+<p>This is p</p>
+<div class="normal">This is div </div>
+<div class="input_file"> 
+<input type="file"> <span>+</span></div>
+<script>
+	
+$(document).ready(function()
+	{
+/////////////////////////////////////////************************************************************/////////////////////////
+//////////////////////////////////////// live and delegate are not working in that version of jQuery//////////////////////////
+////////////////////////////////////////************************************************************//////////////////////////
+		$(".normal").live("click ",function()
+			{
+				$("<p> This is created paragarph</p>").insertAfter($(this));
+			});
+		$("body").delegate(".normal" , "click ",function()
+			{
+				$("<p> This is created paragarph</p>").insertAfter($(this));
+			});
+		$("p").live("click",function(){
+			$(this).slideUp("slow");
+		});
+		
+		$(".input_file span").click(function()
+			{
+				$("<input type='file'> <span>+</span><br>").insertAfter($(this));
+			});
+	});
+</script>
+</body>
+</html>

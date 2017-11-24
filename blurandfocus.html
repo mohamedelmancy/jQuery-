@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BlurandFocus</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="blurandfocus.css">
+
+</head>
+<body>
+<div >
+	<input type="text" name="">
+</div>
+<div>
+	<span>The UserName must be unique</span>
+</div>
+<script>
+	$(document).ready(function()
+		{
+			$("input").on("focus" , function()
+				{
+					$("span").fadeIn("fast" ,function()
+						{
+							$(this).fadeOut(3000);
+						});
+				});
+
+				$("input").on("blur" , function()
+				{
+					if ($(this).val()==="mancy") {
+					$("span").fadeIn("fast" ,function()
+						{
+							$(this).fadeOut(3000);
+						}).text("hello mancy you  are bluring ");
+					}
+					else
+					{
+						$("span").fadeIn("fast" ,function()
+						{
+							$(this).fadeOut(3000);
+						}).text("you are not mancy good gye");
+					}
+				});
+
+
+
+		});
+</script>
+
+</body>
+</html>

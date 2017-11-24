@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chain</title>
+			<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="chain.css">
+</head>
+<body>
+<div class="div1">This is div</div>
+<div class="div2">This is div</div>
+<script>
+	 $(document).ready(function()
+	 	{
+	 		var my_div=$(".div1");
+	 		my_div.slideUp(3000);
+	 		my_div.slideDown(3000);
+	 		my_div.fadeOut(3000);
+	 		my_div.fadeIn(3000);
+	 		var my_div_2=$(".div2");
+
+	 		//////////////////////////////////
+	 		//////////////////////////////////
+
+	 		my_div_2.slideUp(3000)
+	 		.slideDown(3000)
+	 		.fadeOut(3000)
+	 		.fadeIn(3000)
+	 		.css("background","red")
+	 		.hide(3000)
+	 		.show(3000,function(){my_div.hide(3000,function(){my_div.show(3000);});})
+	 		.animate({borderRadius:"30px"},3000,function(){my_div.animate({borderRadius:"30px"})});
+
+	 	});
+</script>
+</body>
+</html>

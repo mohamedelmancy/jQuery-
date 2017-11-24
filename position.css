@@ -1,0 +1,25 @@
+
+*
+{
+	margin: 0;
+	padding: 0;
+
+}
+div
+{
+	background: red;
+	color: white;
+	height: 300px;
+	position: relative;
+	margin-top: 150px;
+	margin-left: 100px;
+	padding: 20px;
+}
+p
+{
+	position: absolute;
+	left: 20px;
+	top: 100px;
+	background: blue;
+	height: 100px;
+}

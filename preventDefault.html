@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PreventDefault.html</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="preventDefault.css">
+</head>
+<body>
+<a href="https://www.google.com" target="_blank" onclick="return false">Google</a>
+<img src="im.jpg">
+<script>
+	$(document).ready(function()
+		{
+			$("a").on("click" ,  function(event)
+				{
+					event.preventDefault();
+					$("img").fadeIn(2000);
+					if (event.isDefaultPrevented()) {
+						$("a").text("the link will not work");
+					}
+				});
+		});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Referenceselectorspart6</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="referenceselectorspart6.css">
+</head>
+<body>
+<input type="text" name="" disabled>
+<input type="password" name="">
+<input type="file" name="">
+<input type="image" src="im.jpg">
+<input type="submit" name="">
+<input type="reset" name="">
+<input type="checkbox" name="" checked>
+<input type="radio" name="">
+<select>
+	<option value="100">This is onr</option>
+	<option value="200" selected>This is two</option>
+	<option value="300">This is three</option>
+</select>
+<script>
+	$(document).ready(function()
+		{
+			$(":input").css("display" , "block");
+			$(":text").click(function()
+				{
+					$(this).fadeOut("slow");
+				});
+			$(":password").click(function()
+				{
+					$(this).slideUp("slow");
+				});
+			$(":disabled").css("background" , "red");
+			$(":enabled").css("background" , "green	");
+			$(":checked").animate({
+
+				marginTop:"20px",
+				marginLeft:"50px",
+			});
+			var select = $(":selected").val();
+			console.log(select);
+		});
+</script>
+</body>
+</html>

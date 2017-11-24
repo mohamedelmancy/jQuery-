@@ -1,0 +1,7 @@
+input[type="text"]
+{
+	width: 500px;
+	color: red;
+	font-weight: bold;
+	padding:10px;
+}

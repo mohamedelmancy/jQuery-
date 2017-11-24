@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Submit</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="submit.css">
+</head>
+<body>
+<form>	
+<p>Please type "confirm" to delete your account </p>
+	<input type="text" name="username">
+	<input type="submit" name="">
+
+</form>
+<span></span>
+<script>
+	$(document).ready(function()
+		{
+			$("form").submit(function(event)
+				{
+					if ($("input:first").val()==="confirm") {
+						$("span").text("word is OK").show();
+						
+					}
+					else
+					{
+					$("span").text("word is not correct").show().fadeOut(3000);
+					event.preventDefault();
+				}
+				});
+			
+		});
+</script>
+
+</body>
+</html>

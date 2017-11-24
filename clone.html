@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clone</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="clone.css">
+</head>
+<body>
+<div class="main">This is my main div </div>
+<button>Clone This </button>
+<script>
+	$(document).ready(function()
+		{
+		/*	$("button").on("click" , function()
+				{
+					$("div").clone().appendTo("body");// this id default =false 
+				});
+
+			$(".main").on("click" , function()
+				{
+					$("div").css("color" , "red");
+				});*/
+//////////////////////////////////////////////////////////////////// wiyh true ?????     copy with it's events 
+
+
+			$("button").on("click" , function()
+				{
+					$("div").clone(true).appendTo("body");// this id default =false 
+				});
+
+			$(".main").on("click" , function()
+				{
+					$("div").css("color" , "red");
+				});
+
+		});
+</script>
+</body>
+</html>

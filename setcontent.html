@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SetContent</title>
+			<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="setcontent.css">
+</head>
+<body>
+<div><span style="color: red ; font-weight: bold;">Welcome to JQUERY Text</span></div>
+<p></p>
+<input type="text" name="mancy">
+<button class="button1">Get Value</button>
+<button class="button2">Set Value</button>
+<button class="button3"> Get Attributes of Google</button>
+<button class="button4"> Change Attributes of Google</button>
+<a href="https://www.google.com" class="link" target="_blank">Google</a>
+<script>
+	$(document).ready(function()
+		{
+			var div1=$("div").text();// will produce only the text >"Welcome to jquery"
+			var div2=$("div").html();// will produce tags of the div 
+			$("p").html( div2 );
+			///////////////////////////////////////////
+			///////////////////////////////////////////
+			///////////////////////////////////////////
+			$(".button1").click(function()
+				{
+					var value =$("input").val();
+					alert(value);
+				});
+			/////////////////////////////
+			$(".button2").click(function()
+				{
+					var value =$("input").val("This is JQUERY Course");
+				});
+
+			$(".button3").click(function()
+				{
+					var mancy=$("a").attr("target");
+				$("input").val(mancy);	
+				});
+
+			$(".button4").click(function()
+				{
+				$("a").attr({"class":"Nclass" , "href":"https://www.mohamedelmancy.com"});
+alert("Attributes has changed :D");
+				});
+
+		});
+</script>
+</body>
+</html>

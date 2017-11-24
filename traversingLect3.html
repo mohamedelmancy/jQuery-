@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Traversing Lect3</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="traversingLect3.css">
+</head>
+<body>
+<section>
+	<div class="select">This is div1</div>
+		<div>This is div2</div>
+	<div>This is div2 jquery</div>
+	<P>hellow p1</P>
+		<P class="select">hellow p2</P>
+			<P>hellow p3</P>
+</section>
+<script>
+	$(document).ready(function()
+		{
+        $("div:contains('jquery')").css("border","3px solid red");
+		$("div:contains('jquery')").siblings().css("border","3px solid green");
+		/*$("div:contains('jquery')").siblings(".select").fadeOut(2000);
+		$("div:contains('jquery')").click(function()
+		{
+			$(this).siblings().slideUp(2000);
+		});*/
+		$("div ,p").click(function()
+			{
+				$(this).next().css({
+					fontWeight:"bold",
+					color:"blue",
+					background:"red"
+				});
+			  $(this).nextUntil(".select").css("background","yellow");
+				$(this).prev().css("background","green");
+				$(this).nextAll().css("border","5px solid #2c3e45");
+				$(this).prevAll().css("fontSize","30px");
+				 $(this).prevUntil(".select").css("fontSize","60px");
+
+			});
+		$("div , p").dblclick(function()
+			{
+				$(this).next().slideToggle(1000);
+			});
+		});
+</script>
+
+</body>
+</html>

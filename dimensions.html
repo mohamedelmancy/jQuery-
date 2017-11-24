@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dimenstions</title>
+					<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="dimensions.css">
+</head>
+<body>
+<div class="first">This is 200px Div </div>
+<div class="container"> 
+<div class="left">Left</div>
+<div class="right">Right</div>
+</div>
+<h3>Click on the div to see width and height</h3>
+<div class="original">Original width()</div>
+<div class="inner">INNER width(+padding)</div>
+<div class="outer">OUTER width(+padding+border)</div>
+<div class="outer2">OUTER width with true(+Margin+padding+border)</div>
+
+<div class="original">Original height()</div>
+<div class="inner">INNER height(+padding)</div>
+<div class="outer">OUTER height(+padding+border)</div>
+<div class="outer2">OUTER height with true(+Margin+padding+border)</div>
+<script>
+	$(document).ready(function()
+		{
+///////////////////////////////////////////////////////////**********************//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////**********************//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////       WIDTH		    ///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////*********************///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////*********************///////////////////////////////////////////////////////////////////////	
+			$(".first").click(function()
+				{
+					$("div").width("+=" + 50);
+					var width=$("div").width();// don't care margin padding border
+					$("div").text("This div is " + width + "px");
+				});
+
+			$(".left").click(function()
+				{
+					$(this).width("+=" + 50);
+					$(".right").width("-=" +50);
+					var width1=$(".left").width();
+					var width2=$(".right").width();
+					$(".left").text("This div is " + width1 + "px");
+					$(".right").text("This div is " + width2 + "px");
+					if (width1==640) {
+
+						$(".left").css({
+							maxWidth:width1 + "px"
+						});
+						
+						$(".right").css({
+							minWidth:width2 + "px"
+						});
+						
+
+
+					}
+				});
+
+			$(".right").click(function()
+				{
+					$(this).width("+=" + 50);
+					$(".left").width("-=" +50);
+					var width1=$(".left").width();
+					var width2=$(".right").width();
+					$(".left").text("This div is " + width1 + "px");
+					$(".right").text("This div is " + width2 + "px");
+					if (width2==650) {
+
+						$(".right").css({
+							maxWidth:width2 + "px"
+						});
+						
+						$(".left").css({
+							minWidth:width1 + "px"
+						});
+						
+
+
+					}
+				});
+				////////////////////////////////(WIDTH) original width
+			///////////////////////////////
+
+			$(".original").click(function(){
+				var myoriginal = $(".original").width();
+				$(".original").text(myoriginal);
+			});
+
+			////////////////////////////////(INNER WIDTH) original width ++++++++ padding only
+			///////////////////////////////
+			
+			$(".inner").click(function(){
+				var myinner = $(".inner").innerWidth();
+				$(".inner").text(myinner);
+			});
+			////////////////////////////////(OUTER WIDTH) original width ++++++++ padding +++++ border
+			///////////////////////////////
+			$(".outer").click(function(){
+				var myouter = $(".outer").outerWidth();
+				$(".outer").text(myouter);
+			});
+
+	////////////////////////////////(OUTER WIDTH) original width ++++++++ padding +++++ border +++++margin
+			///////////////////////////////
+					$(".outer2").click(function(){
+				var myouter2 = $(".outer2").outerWidth(true);
+				$(".outer2").text(myouter2);
+			});
+
+///////////////////////////////////////////////////////////**********************//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////**********************//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////       HEIGHT		///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////*********************///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////*********************///////////////////////////////////////////////////////////////////////	
+
+		$(".original").click(function(){
+				var myoriginal = $(".original").height();
+				$(".original").text(myoriginal);
+			});
+
+			////////////////////////////////(INNER WIDTH) original width ++++++++ padding only
+			///////////////////////////////
+			
+			$(".inner").click(function(){
+				var myinner = $(".inner").innerHeight();
+				$(".inner").text(myinner);
+			});
+			////////////////////////////////(OUTER WIDTH) original width ++++++++ padding +++++ border
+			///////////////////////////////
+			$(".outer").click(function(){
+				var myouter = $(".outer").outerHeight();
+				$(".outer").text(myouter);
+			});
+
+	////////////////////////////////(OUTER WIDTH) original width ++++++++ padding +++++ border +++++margin
+			///////////////////////////////
+					$(".outer2").click(function(){
+				var myouter2 = $(".outer2").outerHeight(true);
+				$(".outer2").text(myouter2);
+			});
+		});
+</script>
+
+</body>
+</html>

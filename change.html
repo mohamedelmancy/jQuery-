@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="change.css">
+
+</head>
+<body>
+<input type="text" placeholder="ad title">
+<textarea placeholder="ad content"></textarea>
+<div>
+	<h3></h3>
+	<p></p>
+</div>
+<select>
+	<option>test1</option>
+	<option>test2</option>
+	<option>test3</option>
+	<option>test4</option>
+</select>
+<script>
+	$(document).ready(function()
+		{
+
+			$("input").on("change" ,  function()
+				{
+					$("div h3").text($(this).val());
+				});
+
+
+			$("textarea").on("change" ,  function()
+				{
+					$("div p").text($(this).val());
+				});
+
+			$("select").on("change" ,  function()
+				{
+					$("div").css("background" , "gold");
+				});
+		});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="animation.css">
+
+</head>
+<body>
+<h1>Usage of two animations</h1>
+<div class="div1">This div will animate</div>
+<span>The first animation is done</span>
+<div class="div2">This div will animate</div>
+<div class="div3">This div will come</div>
+<script>
+	$(document).ready(function()
+		{
+			$(".div1").animate({
+				width:'500px',
+				height:'+=75px',
+				width:'-=160px',
+				borderRadius:'20px'
+			},3000,function()
+			{
+				$("span").fadeIn("10");
+			});
+			$(".div1").animate({
+				left:'100px',
+				width:'600px',
+				height:'100px',
+				opacity:'.5'
+			
+			},"slow");
+
+			$(".div2").animate({
+				width:'toggle',
+				height:'toggle'
+			});
+			$(".div2").animate({
+				left:'toggle',
+				width:'toggle'
+			},"slow");
+
+
+			///////////////////////////////////////
+			///////////////////////////////////////
+				$(".div2").animate({
+				width:'hide',
+				height:'hide'
+			});
+			$(".div2").animate({
+				left:'show',
+				width:'show'
+			},"slow");
+				$(".div2").animate({
+				width:'toggle',
+				height:'toggle'
+			});
+			$(".div2").animate({
+				left:'toggle',
+				width:'toggle'
+			},"slow");
+				$(".div2").animate({
+				width:'toggle',
+				height:'toggle'
+			});
+			$(".div2").animate({
+				left:'toggle',
+				width:'toggle'
+			},"slow");
+				$(".div2").animate({
+				width:'toggle',
+				height:'toggle'
+			});
+			$(".div2").animate({
+				left:'toggle',
+				width:'toggle'
+			},"slow");
+				$(".div2").animate({
+				width:'toggle',
+				height:'toggle'
+			});
+			$(".div2").animate({
+				left:'toggle',
+				width:'toggle'
+			},"slow");
+			///////////////////////////////
+			//////////////////////////////
+			$(".div3").animate({
+				top:'250px',
+				left:'500px',
+			},"slow");
+			$(".div3").animate({
+				height:'200px'
+			},"slow");
+			$(".div3").animate({
+				borderRadius:'40px'
+			},"slow");
+			$(".div3").fadeOut("slow");
+		});
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Detach</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="detach.css">
+</head>
+<body>
+<div>This is div</div>
+<button class="remove" ="remove">Remove</button>
+<button class="add" ="add">Add</button>
+<script>
+	$(document).ready(function()
+		{
+		var element=$("div");
+		/*$(".remove").on("click" , function()
+			{
+				element.remove();
+			});
+
+
+			$(".add").on("click" , function()
+			{
+				$("body").prepend(element);
+			});
+			element.on("click" , function()
+				{
+					$(this).css("color" , "red");
+				});*/
+				////////////////////////////////////////////////////////detach///////////////////////
+				$(".remove").on("click" , function()
+			{
+				element.detach();
+			});
+
+
+			$(".add").on("click" , function()
+			{
+				$("body").prepend(element);
+			});
+			element.on("click" , function()
+				{
+					$(this).css("color" , "red");
+				});
+
+
+
+		});
+</script>
+
+</body>
+</html>

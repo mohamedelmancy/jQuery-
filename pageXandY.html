@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PageXandY</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="pageXandY.css">
+</head>
+<body>
+<div class="circule"></div>
+<script>
+	$(document).ready(function()
+		{
+			$("html").click(function(e)
+				{
+					$(".circule").show().offset({
+						left:e.pageX,
+						top:e.pageY
+					});
+				});
+			
+		});
+</script>
+
+</body>
+</html>

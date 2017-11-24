@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Position</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="position.css">
+</head>
+<body>
+<div>
+	<p>This is p</p>
+</div>
+<script>
+	$(document).ready(function()
+		{
+			
+		console.log($("p").offset());// bygeeb el position bs mn el document (page)
+		console.log($("p").position());// bygeeb el position bs mn el container elly hwa feh  >> msh byt2sr b el padding
+		});
+</script>
+
+</body>
+</html>

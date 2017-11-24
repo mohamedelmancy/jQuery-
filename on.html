@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>On</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="on.css">
+</head>
+<body>
+<div class="normal">This is div</div>
+<div class="new">This is custom div[Click It]</div>
+<div class="map"> Map </div>
+<button class="create">Create paragarph </button>
+<input type="file"> <span>+</span></div>
+<script>
+//////////////////////////////// Syntax of On(event , child selector , data , function , map)/////////////////////////
+////////////////////////////////child selector is optional ///////////////////////////////////////////////////////////
+	$(document).ready(function()
+		{
+///////////////////////////////////////////////////////////////////////////////////////////single event//////////////////////////////
+
+		/*	$("body").on("mouseenter" , ".normal" , function()// with child selector
+				{
+					$(this).fadeOut(3000);
+				});
+
+
+			$(".normal").on("mouseleave" , function()// without child selector
+				{
+					$(this).fadeIn(3000);
+				});*/
+///////////////////////////////////////////////////////////////////////////////////////multi event//////////////////////////////////////
+
+			$(".normal").on("mouseleave mouseenter" , function()// without child selector
+				{
+					$(this).toggleClass("color");
+				});
+//////////////////////////////////////////////////////////////////////////////////////////custom event///////////////////////////////////
+				$(".new").on("customFunction",function(event , name , age , myback , mycolor , mywidth , myheight , myfontweight , mypadding)
+					{
+
+				$(this).text("the name is  "+name+"  and the age is  "+age);////// 55555555aly balak lazem t7t klmt event swa2 7tet parameters wla l2 
+				$(this).css({
+					width:mywidth,
+					height:myheight,
+					color:mycolor,
+					fontWeight:myfontweight,
+					border:"2px solid red",
+					background:myback,
+					padding:mypadding
+				});
+					});
+				$(".new").on("click" , function()
+					{
+						$(this).trigger("customFunction" ,["mancy" , 23 , "gray" , "blue" , "300px" , "50px" , "bold" ,"10px" ]);
+					});
+////////////////////////////////////////////////////////////////////////////////event map with on //////////////////////////////////////////////////////
+			$(".map").on({
+				click:function()
+				{
+					$(this).text("You have clicked me");
+				},
+				dblclick:function()
+				{
+					$(this).text("You have double clicked me");
+				},
+				mouseenter:function()
+				{
+					$(this).text("Your mouse touch me");
+				},
+				mouseleave:function()
+				{
+					$(this).text("Your mouse fucked off me");
+				}
+
+			});
+////////////////////////////////////////////////////////////////////////// do some thing in the created elements////////////////////////////////////////
+		
+			$(".create").on("click",function()
+				{
+					$("<p>This is created paragarph</p></br>").insertAfter($(this));
+
+				});
+			$("body").on("click","p" , function()//555555555aky balk lazem tst5dm el child selector
+				{
+					$(this).slideUp("slow");
+				});
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+			$("span").on("click", function()
+			{
+				$("<input type='file'> <span>+</span><br>").insertAfter($(this));
+			});
+			$("body").on("click","span", function()
+			{
+				$("<input type='file'> <span>+</span><br>").insertAfter($(this));
+			});
+
+		});
+</script>
+
+</body>
+</html> 

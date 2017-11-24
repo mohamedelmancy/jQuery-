@@ -1,0 +1,13 @@
+div , p
+{
+	background: #676767;
+	width: 300px;
+}
+span
+{
+	display: block;
+}
+.hide
+{
+	display: none;
+}

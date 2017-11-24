@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prop</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="prop.css">
+</head>
+<body>
+<form>
+	<input type="text" disabled="disabled">
+	<button>Click</button>
+</form>
+<script>
+	$(document).ready(function()
+		{
+			$("button").click(function(e)
+				{
+					e.preventDefault();
+					console.log($("input").attr("disabled"));
+					console.log($("input").prop("disabled"));
+					$("input").prop({
+						disabled:false,
+						name : "myinput",
+						id:"myid"
+					});
+				});
+		
+		});
+</script>
+</body>
+</html>

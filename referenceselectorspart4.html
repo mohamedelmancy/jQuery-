@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Referenceselectorspart4</title>
+		<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="referenceselectorspart4.css">
+</head>
+<body>
+<h1>Click here to change the animated div </h1>
+<input type="text" name="t">
+<h2>Heading 2</h2>
+<p lang="ar">This is P</p>
+<h3>Heading 3</h3>
+<div>This is div where we love jquery</div>
+<div>This is div where we love  JavaScript</div>
+<div>This is div where we love Html5
+<span>This is inline span</span>
+</div>
+<div class="hide"></div>
+<h4>Heading 4</h4>
+<script>
+	$(document).ready(function()
+		{
+
+			$("h2").css("fontFamily" , "tahoma");
+			$(":header").css("color" , "red");
+			$("div:contains('jquery')").animate({
+				width:"500px"
+			},5000).css("border" , "3px solid brown");
+			/*$("div").animate({
+				height:"300px"
+			},8000);*/
+		
+			$("p").animate({
+				width:"500px"
+			},5000);
+			$("h1").click(function()
+				{
+						$(":animated").css({
+							background:'green',
+							color:'blue'
+						});
+				});
+					$("input").focus();
+					$(":focus").css("padding" , "10px");
+					$("div:has('span')").fadeOut(5000);
+					$(":empty").css("background" , "gold");
+				//	$(":parent").css("border" , " 2px solid blue");
+					$(":hidden").fadeIn(10000);
+					$(":root").css("border" , "6px solid #676767");//html
+					$("p:lang('ar')").css("color" , "gold");
+		});
+</script>
+
+</body>
+</html>

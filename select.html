@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="select.css">
+</head>
+<body>
+<textarea>Hello jQuery</textarea>
+<script>
+	$(document).ready(function()
+		{
+			$("textarea").on("click" ,function()
+				{
+					$(this).select();
+				});
+			$("textarea").select(function()
+				{
+					$(this).after("text copied");
+				});
+			
+		});
+</script>
+</body>
+</html>
